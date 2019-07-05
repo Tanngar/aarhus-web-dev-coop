@@ -1,0 +1,97 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Umbraco.Core.Models
+@using Umbraco.Web
+
+
+@*
+    This snippet makes a list of links of all visible pages of the site, as nested unordered HTML lists.
+
+    How it works:
+    - It uses a custom Razor helper called Traverse() to select and display the markup and links.
+*@
+
+
+
+@{
+	var selection = Model.Content.Site().Children()
+						.Where(x => x.IsVisible())
+						.Where(x => x.Name != "Sitemap");
+}
+
+<!-- Footer -->
+<footer class="bg-primary text-light page-footer font-small blue pt-4" style="position:absolute;bottom:0;width:100%;height:280px;">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase">Aarhus Web Dev Cooperation</h5>
+          <p>The official website of the developers based in Aarhus, Denmark.</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Sitemap</h5>
+
+            <ul>
+            	@foreach(var item in selection){
+            		<li>
+            			<a class="text-light" href="@item.Url">@item.Name</a>
+            		</li>
+            	}
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Contacts</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <b>Email:</b> aarhuswebdev@gmail.com
+              </li>
+              <li>
+                <b>Mobile:</b> 2525252525
+              </li>
+              <li>
+                <b>Address:</b> Grongehggade 75
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">
+        <b>© 2018 Copyright: Aarhus Web Dev Cooperation</b>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+
+
+

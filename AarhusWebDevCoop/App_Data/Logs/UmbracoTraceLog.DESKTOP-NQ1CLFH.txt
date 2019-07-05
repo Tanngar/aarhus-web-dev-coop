@@ -1,0 +1,757 @@
+﻿ 2019-06-28 00:49:02,714 [P16196/D3/T50] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Connection Timeout Expired.  The timeout period elapsed while attempting to consume the pre-login handshake acknowledgement.  This could be because the pre-login handshake failed or the server was unable to respond back in time.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=5; handshake=0;  ---> System.ComponentModel.Win32Exception (0x80004005): The wait operation timed out
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:17b2478e-bb69-49b0-adee-de98d3bbe73a
+Error Number:-2,State:0,Class:11
+ 2019-06-28 00:49:17,743 [P16196/D3/T222] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:a51de288-cbec-49fe-9ca9-bb33029900c8
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:49:33,241 [P16196/D3/T276] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:7ea87b82-45b9-40c2-9145-1e8ec3b880cb
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:49:48,342 [P16196/D3/T310] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:76b1a8a0-66dd-46d6-850f-9f141d8b7c4d
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:49:57,714 [P16196/D3/T50] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:87a8321a-e43e-4341-9c01-589b6255cedc
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:49:57,714 [P16196/D3/T255] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (see exception).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.Persistence.UnitOfWork.ScopeUnitOfWork.get_Database()
+   at Umbraco.Core.Persistence.Repositories.ContentRepository.ProcessQuery(Sql sqlFull, PagingSqlQuery pagingSqlQuery, Boolean withCache, Boolean includeAllVersions)
+   at Umbraco.Core.Persistence.Repositories.ContentRepository.PerformGetByQuery(IQuery`1 query)
+   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.GetByQuery(IQuery`1 query)
+   at Umbraco.Core.Services.ContentService.GetContentForRelease()
+   at Umbraco.Core.Publishing.ScheduledPublisher.CheckPendingAndProcess()
+   at Umbraco.Web.Scheduling.ScheduledPublishing.PerformRun()
+ClientConnectionId:87a8321a-e43e-4341-9c01-589b6255cedc
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:50:12,869 [P16196/D3/T208] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:f7b7bafc-99e6-44cb-bcf5-b372661d5fb2
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:50:17,880 [P16196/D3/T264] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:f7b7bafc-99e6-44cb-bcf5-b372661d5fb2
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:50:32,892 [P16196/D3/T119] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:d83b9a65-599e-4051-94f7-c5e75f01c2b2
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:50:37,951 [P16196/D3/T61] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:d83b9a65-599e-4051-94f7-c5e75f01c2b2
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:50:43,242 [P16196/D3/T45] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:d83b9a65-599e-4051-94f7-c5e75f01c2b2
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:50:48,256 [P16196/D3/T62] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:d83b9a65-599e-4051-94f7-c5e75f01c2b2
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:51:03,288 [P16196/D3/T222] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (see exception).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.Persistence.UnitOfWork.ScopeUnitOfWork.get_Database()
+   at Umbraco.Core.Persistence.Repositories.ContentRepository.ProcessQuery(Sql sqlFull, PagingSqlQuery pagingSqlQuery, Boolean withCache, Boolean includeAllVersions)
+   at Umbraco.Core.Persistence.Repositories.ContentRepository.PerformGetByQuery(IQuery`1 query)
+   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.GetByQuery(IQuery`1 query)
+   at Umbraco.Core.Services.ContentService.GetContentForRelease()
+   at Umbraco.Core.Publishing.ScheduledPublisher.CheckPendingAndProcess()
+   at Umbraco.Web.Scheduling.ScheduledPublishing.PerformRun()
+ClientConnectionId:18224d85-0961-4ed5-bd86-075f1443fec9
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:51:03,288 [P16196/D3/T310] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:18224d85-0961-4ed5-bd86-075f1443fec9
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:51:08,301 [P16196/D3/T280] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:18224d85-0961-4ed5-bd86-075f1443fec9
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:51:13,318 [P16196/D3/T291] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:18224d85-0961-4ed5-bd86-075f1443fec9
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:51:18,333 [P16196/D3/T220] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:18224d85-0961-4ed5-bd86-075f1443fec9
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:51:23,336 [P16196/D3/T119] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:18224d85-0961-4ed5-bd86-075f1443fec9
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:51:28,349 [P16196/D3/T44] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:18224d85-0961-4ed5-bd86-075f1443fec9
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:51:33,358 [P16196/D3/T12] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:18224d85-0961-4ed5-bd86-075f1443fec9
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:51:38,362 [P16196/D3/T207] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:18224d85-0961-4ed5-bd86-075f1443fec9
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:51:53,388 [P16196/D3/T242] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:14efc5b3-ac8c-4715-910f-25eb26e05104
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:52:08,417 [P16196/D3/T221] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (see exception).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.Persistence.UnitOfWork.ScopeUnitOfWork.get_Database()
+   at Umbraco.Core.Persistence.Repositories.ContentRepository.ProcessQuery(Sql sqlFull, PagingSqlQuery pagingSqlQuery, Boolean withCache, Boolean includeAllVersions)
+   at Umbraco.Core.Persistence.Repositories.ContentRepository.PerformGetByQuery(IQuery`1 query)
+   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.GetByQuery(IQuery`1 query)
+   at Umbraco.Core.Services.ContentService.GetContentForRelease()
+   at Umbraco.Core.Publishing.ScheduledPublisher.CheckPendingAndProcess()
+   at Umbraco.Web.Scheduling.ScheduledPublishing.PerformRun()
+ClientConnectionId:21c4eb36-bb3d-4fb0-bb4e-3eb83084f86d
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:52:08,417 [P16196/D3/T257] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:21c4eb36-bb3d-4fb0-bb4e-3eb83084f86d
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:52:21,116 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2019-06-28 00:52:21,117 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2019-06-28 00:52:21,524 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2019-06-28 00:52:21,525 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2019-06-28 00:52:21,754 [P16196/D3/T310] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2019-06-28 00:52:21,754 [P16196/D3/T56] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2019-06-28 00:52:22,443 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [InstructionProcessing] Terminating
+ 2019-06-28 00:52:22,443 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [InstructionProcessing] Waiting for tasks to complete
+ 2019-06-28 00:52:22,443 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2019-06-28 00:52:22,444 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2019-06-28 00:52:22,444 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2019-06-28 00:52:22,444 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2019-06-28 00:52:22,444 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2019-06-28 00:52:22,445 [P16196/D3/T312] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2019-06-28 00:52:22,507 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2019-06-28 00:52:22,508 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2019-06-28 00:52:22,508 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [HealthCheckNotifier] Terminating
+ 2019-06-28 00:52:22,508 [P16196/D3/T313] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2019-06-28 00:52:22,508 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [HealthCheckNotifier] Waiting for tasks to complete
+ 2019-06-28 00:52:22,509 [P16196/D3/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [HealthCheckNotifier] Tasks completed, terminated
+ 2019-06-28 00:52:22,738 [P16196/D3/T5] INFO  Umbraco.Core.MainDom - Stopping...
+ 2019-06-28 00:52:23,444 [P16196/D3/T339] ERROR Umbraco.Web.BatchedDatabaseServerMessenger+InstructionProcessing - Failed (will repeat).
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\SASHA\SOURCE\REPOS\AARHUSWEBDEVCOOP\AARHUSWEBDEVCOOP\APP_DATA\AARHUSWEBDEVCOOP.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-NQ1CLFH\Alex'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction(Action action)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection, RetryPolicy retryPolicy)
+   at Umbraco.Core.Persistence.PetaPocoConnectionExtensions.OpenWithRetry(IDbConnection connection)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.DatabaseContext.get_Database()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
+   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.TryPerformRun()
+   at Umbraco.Web.BatchedDatabaseServerMessenger.InstructionProcessing.PerformRun()
+ClientConnectionId:f7844c88-d47c-4a6f-911c-819dc12d6c74
+Error Number:4060,State:1,Class:11
+ 2019-06-28 00:52:23,445 [P16196/D3/T190] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [InstructionProcessing] Tasks completed, terminated
+ 2019-06-28 00:52:24,320 [P16196/D3/T5] INFO  Umbraco.Web.ExamineStartup - Examine shutting down
+ 2019-06-28 00:52:24,356 [P16196/D3/T5] INFO  Umbraco.Web.ExamineStartup - Complete (took 36ms)
+ 2019-06-28 00:52:24,357 [P16196/D3/T5] INFO  Umbraco.Core.MainDom - Released MainDom.
+ 2019-06-28 00:52:55,807 [P16196/D3/T84] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: BuildManagerChange
+
+_shutDownMessage=Change in C:\Users\Sasha\AppData\Local\Temp\Temporary ASP.NET Files\vs\35937ffc\d437fa37\hash\hash.web
+HostingEnvironment initiated shutdown
+File Change Notification Error in C:\Users\Sasha\AppData\Local\Temp\Temporary ASP.NET Files\vs\35937ffc\d437fa37\hash
+HostingEnvironment caused shutdown
+
+_shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
+   at System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
+   at System.Web.Compilation.BuildManager.OnWebHashFileChange(Object sender, FileChangeEvent e)
+   at System.Web.DirectoryMonitor.FireNotifications()
+   at System.Web.Util.WorkItem.CallCallbackWithAssert(WorkItemCallback callback)
+   at System.Web.Util.WorkItem.OnQueueUserWorkItemCompletion(Object state)
+   at System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()

@@ -1,0 +1,11 @@
+Remote repository - https://github.com/Tanngar/AarhusWebDevCoop
+
+Umbraco login - sashak95@gmail.com password : 1234567890
+
+Active members - johndoe61 password : 1234567890
+                 testy password : 1234567890
+
+Guest member -   bigbob password : 1234567890
+
+Users - Jane Wilfred - jane@gmail.com password : 1234567890
+        Tim Hansson - tim@gmail.com password : 1234567890
